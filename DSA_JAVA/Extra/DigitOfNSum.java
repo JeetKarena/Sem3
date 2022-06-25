@@ -14,13 +14,49 @@ public class DigitOfNSum
         String n1=s.nextLine();
         System.out.print("Please Enter A Number : ");
         String n2=s.nextLine();
+        System.out.println("Please Enter What you want to perform (+,-,*,/,%) : ");
+        String op=s.nextLine();
         s.close();
-
+        
         BigInteger Number1 =new BigInteger(n1);
         BigInteger Number2 =new BigInteger(n2);
-        //use add method to add this to number given by user
-        BigInteger Operation =Number1.add(Number2);
-        System.out.println("you value is : "+Operation);
+        BigInteger Operation;
+        //use Switch Statemetns for Oprations
+        switch (op.charAt(0)) {
+            case '+':
+            
+             Operation =Number1.add(Number2);
+            System.out.println("you value is : "+Operation);
+            break;
+            
+            case '-':
+            Operation =Number1.subtract(Number2);
+            System.out.println("you value is : "+Operation);
+            
+            break;
+            
+            case '*':
+            
+            Operation =Number1.multiply(Number2);
+            System.out.println("you value is : "+Operation);
+            break;
+            
+            case '/':
 
+             Operation =Number1.divide(Number2);
+            System.out.println("you value is : "+Operation);
+            break;
+            
+            case '%':
+            
+             Operation =Number1.mod(Number2);
+            System.out.println("you value is : "+Operation);
+            break;
+            
+            default:
+            System.out.println("Please Enter A valid Operation :(  ..!");
+            break;
+        }
+            
+        }
     }
-}
